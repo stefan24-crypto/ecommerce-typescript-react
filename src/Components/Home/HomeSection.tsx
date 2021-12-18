@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./HomeSection.module.css";
 import controller from "../../images/xbox-hero.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import FeaturedProducts from "./FeaturedProducts";
+import FeaturedCategories from "./FeaturedCategories";
 
 const HomeSection = () => {
   return (
@@ -27,7 +27,7 @@ const HomeSection = () => {
         />
       </div>
       <main className={classes.main}>
-        <FeaturedProducts />
+        <FeaturedCategories />
       </main>
     </section>
   );

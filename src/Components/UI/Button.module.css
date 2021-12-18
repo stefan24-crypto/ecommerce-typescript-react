@@ -1,0 +1,30 @@
+/* .btn {
+  padding: 0.5em 1.5em;
+  width: 100px;
+  border-radius: 100em;
+  border: none;
+  outline: none;
+  background: var(--turquoise);
+  font-family: "Poppins";
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 200ms ease-in;
+
+} */
+
+.btn {
+  padding: 0.5em 2em;
+  border-radius: 0.4em;
+  border: 2px solid var(--turquoise);
+  outline: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.08s ease-in;
+  font-family: "Poppins";
+}
+
+.btn:hover {
+  background: var(--turquoise);
+  color: white;
+}

@@ -15,9 +15,22 @@
 
 .links {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1.5em;
+  /* background: brown; */
 }
 
 .link {
+  color: var(--black);
+  /* background: blue; */
+}
+
+.toolTip {
+  font-family: "Poppins";
+  font-size: 1rem;
+}
+
+.icon {
   color: var(--black);
 }
