@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+.nav {
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Dosis";
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.links {
+  display: flex;
+  gap: 1.5em;
+}
+
+.link {
+  color: var(--black);
+}
