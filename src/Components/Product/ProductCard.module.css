@@ -1,0 +1,85 @@
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.6em;
+  gap: 10px;
+  padding: 1em;
+  justify-content: space-between;
+  transition: 200ms ease-in;
+}
+
+.header {
+  height: 200px;
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  /* background-color: aquamarine; */
+  height: 100%;
+  object-fit: contain;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(to top right, var(--turquoise), black);
+  color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.content {
+  text-align: center;
+}
+
+.content p {
+  font-size: 0.8rem;
+  color: rgb(66, 66, 66);
+}
+
+.price {
+  color: rgb(66, 66, 66);
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.6em 2em;
+  border-radius: 100rem;
+  /* border: 1px solid var(--turquoise); */
+  border: none;
+  outline: none;
+  background: linear-gradient(to top right, var(--turquoise), black);
+  color: transparent;
+  background-clip: text;
+  font-family: "Poppins";
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.btn:hover {
+  background: linear-gradient(to top right, var(--turquoise), black);
+  color: white;
+}

@@ -1,5 +1,5 @@
 .products {
-  height: 90vh;
+  height: 100vh;
   display: grid;
   padding: 5em 2em;
   grid-template-columns: repeat(3, 1fr);

@@ -3,6 +3,7 @@ import classes from "./HomeSection.module.css";
 import controller from "../../images/xbox-hero.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import FeaturedCategories from "./FeaturedCategories";
+import FeaturedProducts from "./FeaturedProducts";
 
 const HomeSection = () => {
   return (
@@ -28,7 +29,11 @@ const HomeSection = () => {
       </div>
       <main className={classes.main}>
         <FeaturedCategories />
+        <FeaturedProducts />
       </main>
+      <footer>
+        {/* Add social media and email address here if possible */}
+      </footer>
     </section>
   );
 };

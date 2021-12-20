@@ -1,0 +1,10 @@
+.products {
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90%;
+  gap: 2em;
+  margin: 0 auto;
+  align-content: center;
+  justify-items: center;
+}
