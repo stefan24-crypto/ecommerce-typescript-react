@@ -7,7 +7,7 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import { Badge, IconButton } from "@mui/material";
 import { Tooltip, Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router";
-
+import LoginIcon from "@mui/icons-material/Login";
 //Add logic for selecting price range either here or go to a next page and let the user select.
 
 const Navbar: React.FC = () => {
@@ -21,7 +21,6 @@ const Navbar: React.FC = () => {
     setAnchorEl(null);
   };
   const goToPrice = (e: React.MouseEvent<HTMLElement>) => {
-    // console.log(e.currentTarget.textContent);
     navigate(`/${e.currentTarget.textContent}`);
   };
   return (
@@ -32,6 +31,9 @@ const Navbar: React.FC = () => {
       <div className={classes.links}>
         <Link to="/" className={classes.link}>
           <HomeIcon />
+        </Link>
+        <Link to="/login" className={classes.link}>
+          <LoginIcon />
         </Link>
         <Tooltip title="Price Range" className={classes.toolTip}>
           <IconButton sx={{ color: "rgb(27, 27, 27)" }} onClick={handleClick}>

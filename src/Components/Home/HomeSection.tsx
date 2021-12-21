@@ -12,7 +12,7 @@ const HomeSection = () => {
         <div className={classes.content}>
           <h1>We have the newest technology at the best prices</h1>
           <p>
-            Chekout all our products in various categories, offering you the
+            Checkout all our products in various categories, offering you the
             best quality money can buy. All while offering you a great user
             experience shopping.
           </p>

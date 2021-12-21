@@ -11,12 +11,12 @@ import { useAppDispatch, useAppSelector } from "./store/hooks";
 import { commerce } from "./lib/commerce";
 import { dataActions } from "./store/data-slice";
 import CategoryPage from "./Pages/CategoryPage";
+import LoginPage from "./Pages/LoginPage";
 
-//In commerce js under extra fields. Add a category field so that the user can easil select a different catery.
-// Also allow the user to select a specific price range and fileter the list of products
 // Have a hero seciton on home page with some GSAP animations
-//Add sticky navbar
+//Have a personalized message on cart screen saying something like GOOD EVENING JOHN DOE.
 // Add footer with contact information
+//Add firebase authentication
 
 const App: React.FC = () => {
   const products = useAppSelector((state) => state.data.products);
@@ -38,6 +38,7 @@ const App: React.FC = () => {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/:price" element={<PriceRangePage />} />
         <Route path="/category/:category" element={<CategoryPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Layout>
   );
