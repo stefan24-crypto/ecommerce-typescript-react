@@ -1,11 +1,8 @@
 import React from "react";
+import Checkout from "../Components/Checkout/Checkout";
 
 const CheckoutPage: React.FC = () => {
-  return (
-    <section>
-      <h1>Checkout Page</h1>
-    </section>
-  );
+  return <Checkout />;
 };
 
 export default CheckoutPage;

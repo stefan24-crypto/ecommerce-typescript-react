@@ -11,25 +11,31 @@ import { useAppDispatch, useAppSelector } from "./store/hooks";
 import { commerce } from "./lib/commerce";
 import { dataActions } from "./store/data-slice";
 import CategoryPage from "./Pages/CategoryPage";
-import LoginPage from "./Pages/LoginPage";
+import { UIActions } from "./store/ui-slice";
 
 // Have a hero seciton on home page with some GSAP animations
 //Have a personalized message on cart screen saying something like GOOD EVENING JOHN DOE.
 // Add footer with contact information
-//Add firebase authentication
-
 const App: React.FC = () => {
-  const products = useAppSelector((state) => state.data.products);
+  const cart = useAppSelector((state) => state.data.cart);
   const dispatch = useAppDispatch();
   const fetchProductData = async () => {
+    dispatch(UIActions.setIsLoading(true));
     const { data } = await commerce.products.list();
-    console.log(data);
     dispatch(dataActions.setProducts(data));
+    dispatch(UIActions.setIsLoading(false));
   };
+  const fetchCart = async () => {
+    dispatch(dataActions.setCart(await commerce.cart.retrieve()));
+  };
+
   useEffect(() => {
     fetchProductData();
+    fetchCart();
   }, []);
-  console.log(products);
+
+  console.log(cart);
+
   return (
     <Layout>
       <Routes>
@@ -38,7 +44,6 @@ const App: React.FC = () => {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/:price" element={<PriceRangePage />} />
         <Route path="/category/:category" element={<CategoryPage />} />
-        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Layout>
   );

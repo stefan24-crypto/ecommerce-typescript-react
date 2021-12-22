@@ -1,10 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+
+type dynamicObj = { [key: string]: any };
 interface state {
   products: any[];
+  cart: dynamicObj;
 }
 
 const initialState: state = {
   products: [],
+  cart: {},
 };
 
 const dataSlice = createSlice({
@@ -13,6 +17,9 @@ const dataSlice = createSlice({
   reducers: {
     setProducts(state, action) {
       state.products = action.payload;
+    },
+    setCart(state, action) {
+      state.cart = action.payload;
     },
   },
 });

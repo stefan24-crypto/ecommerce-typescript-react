@@ -4,6 +4,7 @@
   grid-template-columns: repeat(4, 1fr);
   width: 90%;
   margin: 0 auto;
+  gap: 2em;
 }
 
 .title {
@@ -12,9 +13,6 @@
 }
 
 .title h1 {
-  /* background: linear-gradient(to top left, var(--turquoise), black);
-  color: transparent;
-  background-clip: text; */
   font-size: 2rem;
   color: var(--black);
 }

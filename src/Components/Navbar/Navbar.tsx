@@ -7,10 +7,10 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import { Badge, IconButton } from "@mui/material";
 import { Tooltip, Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router";
-import LoginIcon from "@mui/icons-material/Login";
-//Add logic for selecting price range either here or go to a next page and let the user select.
+import { useAppSelector } from "../../store/hooks";
 
 const Navbar: React.FC = () => {
+  const cart = useAppSelector((state) => state.data.cart);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>();
   const navigate = useNavigate();
   const open = Boolean(anchorEl);
@@ -32,9 +32,6 @@ const Navbar: React.FC = () => {
         <Link to="/" className={classes.link}>
           <HomeIcon />
         </Link>
-        <Link to="/login" className={classes.link}>
-          <LoginIcon />
-        </Link>
         <Tooltip title="Price Range" className={classes.toolTip}>
           <IconButton sx={{ color: "rgb(27, 27, 27)" }} onClick={handleClick}>
             <LocalOfferIcon />
@@ -55,7 +52,11 @@ const Navbar: React.FC = () => {
           <MenuItem onClick={goToPrice}>$250 - $500</MenuItem>
         </Menu>
         <Link to="/cart" className={classes.link}>
-          <Badge badgeContent={3} color="primary">
+          <Badge
+            badgeContent={cart.total_items}
+            color="primary"
+            sx={{ fontFamily: "Poppins" }}
+          >
             <ShoppingCartIcon />
           </Badge>
         </Link>

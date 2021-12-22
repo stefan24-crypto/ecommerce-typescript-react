@@ -1,0 +1,37 @@
+.btns {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+  padding-bottom: 0;
+}
+
+.btns button:nth-child(1) {
+  width: 40%;
+}
+
+.btns button:nth-child(2) {
+  width: 60%;
+}
+
+.btn {
+  padding: 0.6em 1em;
+  border-radius: 100rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(to top left, var(--turquoise), #2196f3);
+  font-family: "Poppins";
+  font-size: 0.9rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: 200ms ease-in;
+}
+
+.btn:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.356);
+}
+
+.title {
+  padding: 1em 0;
+}
