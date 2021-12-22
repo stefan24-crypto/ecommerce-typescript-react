@@ -1,20 +1,16 @@
-.paper {
-  width: 60%;
-  margin: 0 auto;
-  margin-bottom: 1em;
-  padding: 1em;
-}
-
-.title h1 {
-  font-size: 2rem;
-  color: var(--black);
-}
-
-.title {
+.btns {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 1em;
 }
 
+.btns button:nth-child(1) {
+  width: 40%;
+}
+
+.btns button:nth-child(2) {
+  width: 60%;
+}
 .btn {
   padding: 0.6em 1em;
   border-radius: 100rem;
@@ -34,8 +30,6 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.356);
 }
 
-.spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.card_info {
+  padding: 2em 0;
 }

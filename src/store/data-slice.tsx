@@ -4,11 +4,13 @@ type dynamicObj = { [key: string]: any };
 interface state {
   products: any[];
   cart: dynamicObj;
+  order: dynamicObj;
 }
 
 const initialState: state = {
   products: [],
   cart: {},
+  order: {},
 };
 
 const dataSlice = createSlice({
@@ -20,6 +22,9 @@ const dataSlice = createSlice({
     },
     setCart(state, action) {
       state.cart = action.payload;
+    },
+    setOrder(state, action) {
+      state.order = action.payload;
     },
   },
 });

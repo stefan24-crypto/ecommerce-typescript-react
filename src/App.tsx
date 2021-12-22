@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Layout from "./Components/Layout/Layout";
@@ -18,6 +18,7 @@ import { UIActions } from "./store/ui-slice";
 // Add footer with contact information
 const App: React.FC = () => {
   const cart = useAppSelector((state) => state.data.cart);
+  const [errorMessage, setErrorMessage] = useState("");
   const dispatch = useAppDispatch();
   const fetchProductData = async () => {
     dispatch(UIActions.setIsLoading(true));
@@ -29,19 +30,37 @@ const App: React.FC = () => {
     dispatch(dataActions.setCart(await commerce.cart.retrieve()));
   };
 
+  const handleCaptureCheckout = async (checkoutTokenID: any, newOrder: any) => {
+    try {
+      const incomingOrder = await commerce.checkout.capture(
+        checkoutTokenID,
+        newOrder
+      );
+      dispatch(dataActions.setOrder(incomingOrder));
+    } catch (err: any) {
+      setErrorMessage(err.data.error.message);
+    }
+  };
+
   useEffect(() => {
     fetchProductData();
     fetchCart();
   }, []);
-
-  console.log(cart);
 
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route
+          path="/checkout"
+          element={
+            <CheckoutPage
+              errorMessage={errorMessage}
+              handleCaptureCheckout={handleCaptureCheckout}
+            />
+          }
+        />
         <Route path="/:price" element={<PriceRangePage />} />
         <Route path="/category/:category" element={<CategoryPage />} />
       </Routes>
