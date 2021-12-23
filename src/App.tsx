@@ -13,9 +13,9 @@ import { dataActions } from "./store/data-slice";
 import CategoryPage from "./Pages/CategoryPage";
 import { UIActions } from "./store/ui-slice";
 
-// Have a hero seciton on home page with some GSAP animations
-//Have a personalized message on cart screen saying something like GOOD EVENING JOHN DOE.
-// Add footer with contact information
+/*To get credit card working:
+Go to commercejs -> settings -> paymentgateway -> add payment method firstly -> setup stripe
+*/
 const App: React.FC = () => {
   const cart = useAppSelector((state) => state.data.cart);
   const [errorMessage, setErrorMessage] = useState("");
